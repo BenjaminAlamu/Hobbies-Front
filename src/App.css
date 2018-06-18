@@ -1,0 +1,114 @@
+#root{
+  font-family: "Montserrat"  ;
+}
+#login{
+  margin-top: 12.5%;
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.title{
+  margin:30px;
+}
+
+input[type = 'text'],
+input[type = 'password'],
+input[type = 'email'],
+input[type = 'number']{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  font-size: 12px;
+  height: auto;
+  margin: 30px auto;
+  padding: 15px;
+  width: 30%;
+  font-family: "Montserrat";
+  display: block;
+}
+
+input[type="submit"]
+{
+    padding: 15px;
+    color: #fff;
+    background-color: #5F7175;
+    font-size: 12px;
+    text-align: center;
+    font-style: normal;
+    font-family: "Montserrat";
+    border-radius: 5px;
+    width: 20%;
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    margin:20px auto;
+  }
+
+  #rightside{
+    width: 80%;
+    background-color: #ffffff;
+    float: right;
+  }
+
+  
+  #leftside{
+    width: 20%;
+    min-height: 100vh;
+    background-color: #EEEEEE;
+    float: left;
+    
+  }
+
+  .link{
+    display: block;
+    margin: 40px 20px;
+    text-decoration: white;
+    text-decoration-style: none;
+    color: black;
+    font-family: 'Montserrat';
+  }
+
+  .edit, 
+  .del{
+    display: inline;
+    text-decoration: white;
+    text-decoration-style: none;
+    color: black;
+    font-family: 'Montserrat';
+    padding: 5px;
+  }
+
+  .edit{
+    color: #30C2FF;
+  }
+
+  .del{
+    color: #D60909;
+  }
+
+  .buttons{
+    float:right;
+    padding-right: 10%;
+  }
+  
+  .hobby{
+    padding: 20px;
+    display: inline;
+    margin: 10px;
+  }
+
+  .edit,
+  .del{
+    padding: 10px;
+
+  }
+
+  .hobbyContainer{
+    margin: 10px;
+  }
+  
+  #hobbyLabel{
+    margin: 15px;
+  }
