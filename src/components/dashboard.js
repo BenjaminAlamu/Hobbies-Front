@@ -50,10 +50,10 @@ export class Dashboard extends React.Component {
 
         if (loading) {
             load = <Loader
-                type="TailSpin"
+                type="ThreeDots"
                 color="#00BFFF"
-                height="70"
-                width="70"
+                height="50"
+                width="50"
             />;
         }
         else {
@@ -64,7 +64,7 @@ export class Dashboard extends React.Component {
             return <Redirect to='/' />
         }
 
-        if (this.state.list.length == 0) {
+        if ((this.state.list.length == 0) && (!this.state.loading)) {
             hobbyData = <p>No hobby yet</p>
         }
         else {
@@ -81,6 +81,7 @@ export class Dashboard extends React.Component {
             <div id='rightside'>
                 <h5 id="hobbyLabel">Here are your hobbies</h5>
                 {load}
+                {hobbyData}
                 {this.state.list.map(e => (
 
 
