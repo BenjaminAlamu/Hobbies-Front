@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-loader-spinner": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4"
   },
@@ -14,5 +15,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://127.0.0.1:1337"
+  "proxy": "https://hobbybackend.herokuapp.com"
 }

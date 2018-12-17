@@ -1,20 +1,18 @@
-#root{
-  font-family: "Montserrat"  ;
+#root {
+  font-family: "Montserrat";
 }
-#login{
+
+#login {
   margin-top: 12.5%;
   font-family: 'Montserrat';
   text-align: center;
 }
 
-.title{
-  margin:30px;
+.title {
+  margin: 30px;
 }
 
-input[type = 'text'],
-input[type = 'password'],
-input[type = 'email'],
-input[type = 'number']{
+input[type='text'], input[type='password'], input[type='email'], input[type='number'] {
   border: 0;
   outline: 0;
   background: transparent;
@@ -30,85 +28,83 @@ input[type = 'number']{
   display: block;
 }
 
-input[type="submit"]
-{
-    padding: 15px;
-    color: #fff;
-    background-color: #5F7175;
-    font-size: 12px;
-    text-align: center;
-    font-style: normal;
-    font-family: "Montserrat";
-    border-radius: 5px;
-    width: 20%;
-    border-width: 1px 1px 3px;
-    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-    margin:20px auto;
-  }
+input[type="submit"] {
+  padding: 15px;
+  color: #fff;
+  background-color: #5F7175;
+  font-size: 12px;
+  text-align: center;
+  font-style: normal;
+  font-family: "Montserrat";
+  border-radius: 5px;
+  width: 20%;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin: 20px auto;
+}
 
-  #rightside{
-    width: 80%;
-    background-color: #ffffff;
-    float: right;
-  }
+#rightside {
+  width: 80%;
+  background-color: #ffffff;
+  float: right;
+}
 
-  
-  #leftside{
-    width: 20%;
-    min-height: 100vh;
-    background-color: #EEEEEE;
-    float: left;
-    
-  }
+#leftside {
+  width: 20%;
+  min-height: 100vh;
+  background-color: #EEEEEE;
+  float: left;
+}
 
-  .link{
-    display: block;
-    margin: 40px 20px;
-    text-decoration: white;
-    text-decoration-style: none;
-    color: black;
-    font-family: 'Montserrat';
-  }
+.link {
+  display: block;
+  margin: 40px 20px;
+  text-decoration: white;
+  text-decoration-style: none;
+  color: black;
+  font-family: 'Montserrat';
+}
 
-  .edit, 
-  .del{
-    display: inline;
-    text-decoration: white;
-    text-decoration-style: none;
-    color: black;
-    font-family: 'Montserrat';
-    padding: 5px;
-  }
+.edit, .del {
+  display: inline;
+  text-decoration: white;
+  text-decoration-style: none;
+  color: black;
+  font-family: 'Montserrat';
+  padding: 5px;
+}
 
-  .edit{
-    color: #30C2FF;
-  }
+.edit {
+  color: #30C2FF;
+}
 
-  .del{
-    color: #D60909;
-  }
+.del {
+  color: #D60909;
+}
 
-  .buttons{
-    float:right;
-    padding-right: 10%;
-  }
-  
-  .hobby{
-    padding: 20px;
-    display: inline;
-    margin: 10px;
-  }
+.buttons {
+  float: right;
+  padding-right: 10%;
+}
 
-  .edit,
-  .del{
-    padding: 10px;
+.hobby {
+  padding: 20px;
+  display: inline;
+  margin: 10px;
+}
 
-  }
+.edit, .del {
+  padding: 10px;
+}
 
-  .hobbyContainer{
-    margin: 10px;
-  }
-  
-  #hobbyLabel{
-    margin: 15px;
-  }
+.hobbyContainer {
+  margin: 10px;
+}
+
+#hobbyLabel {
+  margin: 15px;
+}
+
+.error {
+  color: red;
+}

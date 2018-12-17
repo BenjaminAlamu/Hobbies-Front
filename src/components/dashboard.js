@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {render} from 'react-dom';
-import {Link, Redirect} from 'react-router-dom';
+import { render } from 'react-dom';
+import { Link, Redirect } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
-export class Dashboard extends React.Component{
-    constructor(props){
+export class Dashboard extends React.Component {
+    constructor(props) {
         super();
         this.state = {
-            tokenNotFound : false, 
-            list : []
+            tokenNotFound: false,
+            list: [],
+            loading: true,
         }
     }
 
-    componentWillMount(){
+    componentWillMount () {
         console.log("Here");
         var id = localStorage.getItem('userid');
 
@@ -21,53 +23,80 @@ export class Dashboard extends React.Component{
             headers: {
                 'Authorization': this.getToken(),
                 "Content-Type": "application/json"
-            }}).then((res) => res.json())
-        .then(function(data){
-            if(data.tokenNotFound == true){
-                self.setState({tokenNotFound :true})
             }
-            console.log(data);
-            self.setState({list : data},() => console.log(self.state.list))
-            console.log(self.state.list);
-            
-        }).catch((err)=>console.log(err))
+        }).then((res) => res.json())
+            .then(function (data) {
+                if (data.tokenNotFound == true) {
+                    self.setState({ tokenNotFound: true })
+                }
+                console.log(data);
+                self.setState({ list: data }, () => console.log(self.state.list))
+                console.log(self.state.list);
+                self.setState({ loading: false })
+
+            }).catch((err) => console.log(err))
     }
 
-    getToken(){
+    getToken () {
         return "Bearer " + localStorage.getItem('token');
     }
 
-    render(){
+    render () {
+
+        let load;
+        let hobbyData;
+        let loading = this.state.loading;
+
+
+        if (loading) {
+            load = <Loader
+                type="TailSpin"
+                color="#00BFFF"
+                height="70"
+                width="70"
+            />;
+        }
+        else {
+            load = "";
+        }
 
         if (this.state.tokenNotFound) {
             return <Redirect to='/' />
-          }
+        }
 
-       return <div>
-                <div id = 'leftside'>
-                <Link to = {'/dashboard'} className = "link">Home </Link>
-                <Link to = {'/addhobby'} className = "link">Add Hobby </Link>
-                <Link to = {'/logout'} className = "link">Log Out </Link>
-                </div>
+        if (this.state.list.length == 0) {
+            hobbyData = <p>No hobby yet</p>
+        }
+        else {
 
-                <div id = 'rightside'>
-                <h5 id = "hobbyLabel">Here are your hobbies</h5>
+        }
+
+        return <div>
+            <div id='leftside'>
+                <Link to={'/dashboard'} className="link">Home </Link>
+                <Link to={'/addhobby'} className="link">Add Hobby </Link>
+                <Link to={'/logout'} className="link">Log Out </Link>
+            </div>
+
+            <div id='rightside'>
+                <h5 id="hobbyLabel">Here are your hobbies</h5>
+                {load}
                 {this.state.list.map(e => (
-                        
 
-                        <div className = 'hobbyContainer'>
-                        <p className = 'hobby'>{e.hobby}</p>
-                        <div className = 'buttons'>
-                        <Link to = {'/edit/' + e.id} className = "edit">Edit </Link>
-                        <Link to = {'/delete/' + e.id}  className = "del">Delete </Link>
+
+                    <div className='hobbyContainer'>
+                        <p className='hobby'>{e.hobby}</p>
+                        <div className='buttons'>
+                            <Link to={'/edit/' + e.id} className="edit">Edit </Link>
+                            <Link to={'/delete/' + e.id} className="del">Delete </Link>
                         </div>
-                        </div>
-                    ))}
-                
+                    </div>
+                ))}
+
 
                 {/* {this.getHobbies()} */}
-                </div>
             </div>
+        </div>
     }
 }
 
