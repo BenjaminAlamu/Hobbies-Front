@@ -24,7 +24,7 @@ export class Edit extends React.Component {
     }
 
 
-    componentWillMount () {
+    componentWillMount() {
 
         // alert("Here");
         console.log("Here");
@@ -40,7 +40,7 @@ export class Edit extends React.Component {
         }).then((res) => res.json())
             .then(function (data) {
                 if (data.tokenNotFound == true) {
-                    self.setState({ tokenNotFound: true })
+                    self.setState({ tokenNotFound: false })
 
                 }
                 console.log(data);
@@ -51,11 +51,11 @@ export class Edit extends React.Component {
             }).catch((err) => console.log(err))
     }
 
-    getToken () {
+    getToken() {
         return "Bearer " + localStorage.getItem('token');
     }
 
-    updateHobby (e) {
+    updateHobby(e) {
         e.preventDefault();
         this.setState({ loading: true });
         let hobby = document.getElementById('hobby').value;
@@ -89,11 +89,11 @@ export class Edit extends React.Component {
             .catch((err) => console.log(err))
     }
 
-    handleChange (event) {
+    handleChange(event) {
         this.setState({ hobby: event.target.value });
     }
 
-    render () {
+    render() {
 
         let load;
         let load2;

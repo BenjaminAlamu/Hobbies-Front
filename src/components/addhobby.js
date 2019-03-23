@@ -17,7 +17,7 @@ export class AddHobby extends React.Component {
         this.addHobby = this.addHobby.bind(this);
     }
 
-    componentWillMount () {
+    componentWillMount() {
         console.log("Here");
         var id = localStorage.getItem('userid');
 
@@ -30,12 +30,12 @@ export class AddHobby extends React.Component {
         }).then((res) => res.json())
             .then(function (data) {
                 if (data.tokenNotFound == true) {
-                    self.setState({ tokenNotFound: true })
+                    self.setState({ tokenNotFound: false })
                 }
             }).catch((err) => console.log(err))
     }
 
-    addHobby (e) {
+    addHobby(e) {
         e.preventDefault();
         this.setState({ loading: true });
         let hobby = document.getElementById('hobby').value;
@@ -75,11 +75,11 @@ export class AddHobby extends React.Component {
             .catch((err) => console.log(err))
     }
 
-    getToken () {
+    getToken() {
         return "Bearer " + localStorage.getItem('token');
     }
 
-    render () {
+    render() {
 
         let load;
         let loading = this.state.loading;

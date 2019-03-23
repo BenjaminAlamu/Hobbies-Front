@@ -14,7 +14,7 @@ export class Dashboard extends React.Component {
         }
     }
 
-    componentWillMount () {
+    componentWillMount() {
         console.log("Here");
         var id = localStorage.getItem('userid');
 
@@ -27,7 +27,7 @@ export class Dashboard extends React.Component {
         }).then((res) => res.json())
             .then(function (data) {
                 if (data.tokenNotFound == true) {
-                    self.setState({ tokenNotFound: true })
+                    self.setState({ tokenNotFound: false })
                 }
                 console.log(data);
                 self.setState({ list: data }, () => console.log(self.state.list))
@@ -37,11 +37,11 @@ export class Dashboard extends React.Component {
             }).catch((err) => console.log(err))
     }
 
-    getToken () {
+    getToken() {
         return "Bearer " + localStorage.getItem('token');
     }
 
-    render () {
+    render() {
 
         let load;
         let hobbyData;
